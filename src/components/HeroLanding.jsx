@@ -12,7 +12,7 @@ export default function HeroLanding({ onEnter }) {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(226,54,54,0.08)_0%,transparent_70%)] z-[1]" />
 
             {/* Content */}
-            <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <div className="relative z-10 text-center w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12">
                 {/* Subtitle */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

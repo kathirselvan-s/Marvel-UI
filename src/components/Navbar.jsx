@@ -26,11 +26,11 @@ export default function Navbar({ activeSection, onNavigate }) {
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                    ? 'bg-[#020810]/90 backdrop-blur-xl border-b border-[rgba(226,54,54,0.2)] shadow-[0_0_30px_rgba(226,54,54,0.1)]'
-                    : 'bg-transparent'
+                ? 'bg-[#020810]/90 backdrop-blur-xl border-b border-[rgba(226,54,54,0.2)] shadow-[0_0_30px_rgba(226,54,54,0.1)]'
+                : 'bg-transparent'
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div className="w-full max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <motion.div
                     className="flex items-center gap-3 cursor-pointer"
@@ -59,8 +59,8 @@ export default function Navbar({ activeSection, onNavigate }) {
                             key={item.id}
                             onClick={() => onNavigate(item.id)}
                             className={`relative px-5 py-2 text-xs tracking-[0.2em] transition-all duration-300 ${activeSection === item.id
-                                    ? 'text-[#e23636]'
-                                    : 'text-[#8899aa] hover:text-[#e8e8e8]'
+                                ? 'text-[#e23636]'
+                                : 'text-[#8899aa] hover:text-[#e8e8e8]'
                                 }`}
                             style={{ fontFamily: 'Orbitron, sans-serif' }}
                             whileHover={{ scale: 1.05 }}
@@ -131,8 +131,8 @@ export default function Navbar({ activeSection, onNavigate }) {
                                     key={item.id}
                                     onClick={() => { onNavigate(item.id); setMenuOpen(false); }}
                                     className={`text-left px-4 py-3 text-sm tracking-[0.2em] rounded-lg transition-all ${activeSection === item.id
-                                            ? 'text-[#e23636] bg-[#e23636]/10 border border-[#e23636]/20'
-                                            : 'text-[#8899aa] hover:text-white hover:bg-white/5'
+                                        ? 'text-[#e23636] bg-[#e23636]/10 border border-[#e23636]/20'
+                                        : 'text-[#8899aa] hover:text-white hover:bg-white/5'
                                         }`}
                                     style={{ fontFamily: 'Orbitron, sans-serif' }}
                                     whileTap={{ scale: 0.98 }}

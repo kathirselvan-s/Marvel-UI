@@ -169,15 +169,15 @@ export default function App() {
             <HeroLanding onEnter={handleEnter} />
 
             {/* Divider */}
-            <div className="relative py-4">
-              <div className="max-w-3xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-[#e23636]/30 to-transparent" />
+            <div className="relative py-4 px-4 md:px-8 lg:px-12 w-full max-w-[1600px] mx-auto">
+              <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#e23636]/30 to-transparent" />
             </div>
 
             <HeroesGrid />
 
             {/* Divider */}
-            <div className="relative py-4">
-              <div className="max-w-3xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-[#f0b323]/30 to-transparent" />
+            <div className="relative py-4 px-4 md:px-8 lg:px-12 w-full max-w-[1600px] mx-auto">
+              <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#f0b323]/30 to-transparent" />
             </div>
 
             <MovieTimeline />
