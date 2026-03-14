@@ -14,102 +14,92 @@ function LoadingScreen({ onComplete }) {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(onComplete, 500);
+          setTimeout(onComplete, 400);
           return 100;
         }
-        return prev + Math.random() * 15 + 5;
+        return prev + Math.random() * 12 + 4;
       });
-    }, 150);
+    }, 120);
     return () => clearInterval(interval);
   }, [onComplete]);
 
   return (
     <motion.div
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#020810]"
+      exit={{ opacity: 0, scale: 1.02 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#070f1a]"
     >
       {/* Logo */}
       <motion.div
-        initial={{ scale: 0, rotate: -180 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="mb-8"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="mb-6"
       >
-        <div className="w-24 h-24 rounded-full border-2 border-[#e23636]/50 flex items-center justify-center relative">
+        <div className="w-16 h-16 rounded-xl border border-[#c42b2b]/30 flex items-center justify-center bg-[#c42b2b]/8">
           <span
-            className="text-4xl font-black text-[#e23636]"
-            style={{ fontFamily: 'Orbitron, sans-serif' }}
+            className="text-2xl font-bold text-[#c42b2b]"
+            style={{ fontFamily: 'Inter, sans-serif' }}
           >
             A
           </span>
-          <motion.div
-            className="absolute inset-0 rounded-full border-2 border-[#e23636]/20"
-            animate={{ scale: [1, 1.5, 1], opacity: [0.5, 0, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          <motion.div
-            className="absolute inset-0 rounded-full border border-[#00d4ff]/10"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-            style={{ borderRadius: '50%', borderStyle: 'dashed' }}
-          />
         </div>
       </motion.div>
 
       {/* Title */}
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="text-2xl tracking-[0.5em] text-[#e23636] mb-2"
-        style={{ fontFamily: 'Orbitron, sans-serif' }}
+        transition={{ delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="text-xl tracking-[0.4em] text-[#c42b2b] mb-1 font-bold"
+        style={{ fontFamily: 'Inter, sans-serif' }}
       >
         AVENGERS
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="text-xs tracking-[0.5em] text-[#8899aa]/50 mb-12"
-        style={{ fontFamily: 'Orbitron, sans-serif' }}
+        transition={{ delay: 0.5 }}
+        className="text-[10px] tracking-[0.4em] text-[#7a8a9a]/40 mb-10 font-medium"
+        style={{ fontFamily: 'Inter, sans-serif' }}
       >
         UNIVERSE
       </motion.p>
 
       {/* Progress bar */}
-      <div className="w-64">
-        <div className="h-[2px] bg-[#0a1628] rounded-full overflow-hidden mb-3">
+      <div className="w-56">
+        <div className="h-[2px] bg-white/[0.04] rounded-full overflow-hidden mb-2.5">
           <motion.div
             className="h-full rounded-full"
             style={{
               width: `${Math.min(progress, 100)}%`,
-              background: 'linear-gradient(90deg, #e23636, #f0b323)',
-              boxShadow: '0 0 10px rgba(226, 54, 54, 0.5)',
+              background: 'linear-gradient(90deg, #c42b2b, #d4a017)',
+              transition: 'width 0.15s ease-out',
             }}
           />
         </div>
         <div className="flex justify-between">
-          <span className="text-[10px] tracking-wider text-[#8899aa]/40" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-            INITIALIZING SYSTEM
+          <span className="text-[10px] tracking-wider text-[#7a8a9a]/30 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+            INITIALIZING
           </span>
-          <span className="text-[10px] tracking-wider text-[#e23636]/60" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+          <span className="text-[10px] tracking-wider text-[#c42b2b]/50 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
             {Math.min(Math.round(progress), 100)}%
           </span>
         </div>
       </div>
 
-      {/* Status messages */}
+      {/* Status */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="mt-8 text-center"
+        transition={{ delay: 0.8 }}
+        className="mt-6 text-center"
       >
-        <p className="text-[10px] tracking-wider text-[#00d4ff]/30" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-          {progress < 30 && '◆ LOADING S.H.I.E.L.D. DATABASE...'}
-          {progress >= 30 && progress < 60 && '◆ SCANNING HERO PROFILES...'}
-          {progress >= 60 && progress < 90 && '◆ INITIALIZING AVENGERS PROTOCOL...'}
-          {progress >= 90 && '◆ SYSTEM READY'}
+        <p className="text-[10px] tracking-wider text-[#4dc9f6]/20 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+          {progress < 30 && 'Loading database...'}
+          {progress >= 30 && progress < 60 && 'Scanning hero profiles...'}
+          {progress >= 60 && progress < 90 && 'Initializing protocol...'}
+          {progress >= 90 && 'System ready'}
         </p>
       </motion.div>
     </motion.div>
@@ -132,7 +122,6 @@ export default function App() {
     handleNavigate('heroes');
   }, [handleNavigate]);
 
-  // Track scroll position for active section
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['home', 'heroes', 'timeline', 'about'];
@@ -161,23 +150,21 @@ export default function App() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
 
           <main>
             <HeroLanding onEnter={handleEnter} />
 
-            {/* Divider */}
-            <div className="relative py-4 px-4 md:px-8 lg:px-12 w-full max-w-[1600px] mx-auto">
-              <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#e23636]/30 to-transparent" />
+            <div className="relative py-2 px-4 md:px-8 lg:px-12 w-full max-w-[1400px] mx-auto">
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
             </div>
 
             <HeroesGrid />
 
-            {/* Divider */}
-            <div className="relative py-4 px-4 md:px-8 lg:px-12 w-full max-w-[1600px] mx-auto">
-              <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#f0b323]/30 to-transparent" />
+            <div className="relative py-2 px-4 md:px-8 lg:px-12 w-full max-w-[1400px] mx-auto">
+              <div className="w-full h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent" />
             </div>
 
             <MovieTimeline />
