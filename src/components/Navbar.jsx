@@ -30,7 +30,7 @@ export default function Navbar({ activeSection, onNavigate }) {
                 : 'bg-transparent'
                 }`}
         >
-            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12 py-3.5 flex items-center justify-between">
+            <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 lg:px-12 py-5 md:py-6 flex items-center justify-between">
                 {/* Logo */}
                 <motion.div
                     className="flex items-center gap-2.5 cursor-pointer"
@@ -38,14 +38,14 @@ export default function Navbar({ activeSection, onNavigate }) {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                 >
-                    <div className="w-8 h-8 rounded-lg border border-[#c42b2b]/40 flex items-center justify-center bg-[#c42b2b]/10">
-                        <span className="text-[#c42b2b] font-bold text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>A</span>
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl border border-[#c42b2b]/40 flex items-center justify-center bg-[#c42b2b]/10">
+                        <span className="text-[#c42b2b] font-bold text-xl md:text-2xl" style={{ fontFamily: 'Inter, sans-serif' }}>A</span>
                     </div>
                     <div>
-                        <h1 className="text-xs font-bold tracking-widest text-[#c42b2b]" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <h1 className="text-base md:text-xl font-bold tracking-[0.2em] md:tracking-widest text-[#c42b2b]" style={{ fontFamily: 'Inter, sans-serif' }}>
                             AVENGERS
                         </h1>
-                        <p className="text-[9px] tracking-[0.3em] text-[#7a8a9a]/40 font-medium">UNIVERSE</p>
+                        <p className="text-[10px] md:text-[11px] tracking-[0.3em] md:tracking-[0.4em] text-[#7a8a9a]/60 font-medium">UNIVERSE</p>
                     </div>
                 </motion.div>
 
@@ -55,7 +55,7 @@ export default function Navbar({ activeSection, onNavigate }) {
                         <motion.button
                             key={item.id}
                             onClick={() => onNavigate(item.id)}
-                            className={`relative px-4 py-2 text-xs tracking-wide font-medium rounded-lg transition-all duration-300 ${activeSection === item.id
+                            className={`relative px-5 py-2.5 text-sm md:text-base tracking-[0.15em] font-medium rounded-lg transition-all duration-300 ${activeSection === item.id
                                 ? 'text-[#c42b2b]'
                                 : 'text-[#7a8a9a] hover:text-[#e0e0e0]'
                                 }`}
@@ -77,9 +77,9 @@ export default function Navbar({ activeSection, onNavigate }) {
 
                 {/* Status */}
                 <div className="hidden md:flex items-center gap-3">
-                    <div className="flex items-center gap-1.5">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/80" />
-                        <span className="text-[10px] tracking-wider text-emerald-500/50 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                        <span className="text-xs md:text-sm tracking-[0.2em] text-emerald-500/80 font-semibold" style={{ fontFamily: 'Inter, sans-serif' }}>
                             ONLINE
                         </span>
                     </div>

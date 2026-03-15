@@ -35,13 +35,13 @@ export default function Footer() {
                             className="text-center p-5 rounded-xl border border-white/[0.05] bg-[#0d1b2a]/30 hover:border-white/[0.1] transition-all duration-400 group"
                         >
                             <p
-                                className="text-2xl font-bold text-[#c42b2b] mb-1"
+                                className="text-4xl md:text-5xl lg:text-6xl font-black text-[#c42b2b] mb-2"
                                 style={{ fontFamily: 'Inter, sans-serif' }}
                             >
                                 {stat.value}
                             </p>
                             <p
-                                className="text-[10px] tracking-widest text-[#7a8a9a]/40 font-medium"
+                                className="text-xs md:text-sm tracking-[0.3em] text-[#7a8a9a]/70 font-bold"
                                 style={{ fontFamily: 'Inter, sans-serif' }}
                             >
                                 {stat.label}
@@ -58,16 +58,16 @@ export default function Footer() {
                     className="text-center mb-10"
                 >
                     <div className="inline-block">
-                        <div className="w-12 h-12 rounded-lg border border-[#c42b2b]/25 flex items-center justify-center mx-auto mb-3 bg-[#c42b2b]/5">
-                            <span className="text-base font-bold text-[#c42b2b]" style={{ fontFamily: 'Inter, sans-serif' }}>A</span>
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl border border-[#c42b2b]/30 flex items-center justify-center mx-auto mb-5 bg-[#c42b2b]/5 shadow-[0_0_20px_rgba(196,43,43,0.1)]">
+                            <span className="text-2xl md:text-3xl font-bold text-[#c42b2b]" style={{ fontFamily: 'Inter, sans-serif' }}>A</span>
                         </div>
                         <h3
-                            className="text-xs tracking-widest text-[#c42b2b]/40 mb-2 font-medium"
+                            className="text-base md:text-lg tracking-[0.3em] text-[#c42b2b]/60 mb-3 font-semibold"
                             style={{ fontFamily: 'Inter, sans-serif' }}
                         >
                             AVENGERS INITIATIVE
                         </h3>
-                        <p className="text-xs text-[#7a8a9a]/30 max-w-sm mx-auto leading-relaxed italic">
+                        <p className="text-sm md:text-base text-[#7a8a9a]/60 max-w-lg mx-auto leading-relaxed italic font-medium">
                             "There was an idea to bring together a group of remarkable people, to see if they could become something more."
                         </p>
                     </div>
@@ -77,19 +77,19 @@ export default function Footer() {
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/[0.04] to-transparent mb-6" />
 
                 {/* Bottom */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-3">
-                    <span className="text-[10px] tracking-wider text-[#7a8a9a]/20 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-3 py-4">
+                    <span className="text-[11px] md:text-sm tracking-[0.25em] text-[#7a8a9a]/40 font-semibold text-center md:text-left" style={{ fontFamily: 'Inter, sans-serif' }}>
                         STRATEGIC HOMELAND INTERVENTION ENFORCEMENT LOGISTICS DIVISION
                     </span>
-                    <div className="flex items-center gap-3">
-                        <div className="flex items-center gap-1.5">
-                            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/60" />
-                            <span className="text-[10px] tracking-wider text-emerald-500/40 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                    <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-emerald-500/80 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+                            <span className="text-xs md:text-sm tracking-[0.2em] text-emerald-500/70 font-semibold" style={{ fontFamily: 'Inter, sans-serif' }}>
                                 ONLINE
                             </span>
                         </div>
-                        <span className="text-[10px] text-white/[0.06]">|</span>
-                        <span className="text-[10px] tracking-wider text-[#7a8a9a]/20 font-medium" style={{ fontFamily: 'Inter, sans-serif' }}>
+                        <span className="text-sm text-white/[0.08]">|</span>
+                        <span className="text-xs md:text-sm tracking-[0.2em] text-[#7a8a9a]/40 font-semibold" style={{ fontFamily: 'Inter, sans-serif' }}>
                             © {new Date().getFullYear()} AVENGERS UNIVERSE
                         </span>
                     </div>
